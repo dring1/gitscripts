@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+upstream=${1}
+countDiff=$(git rev-list "${upstream}"..HEAD --count)
+git rebase -i HEAD~"${countDiff}"
