@@ -2,6 +2,6 @@
 
 set -e
 
-upstream=${1}
-countDiff=$(git rev-list "${upstream}"..HEAD --count)
+branch=${1}
+countDiff=$(git rev-list "${branch}"..HEAD --count)
 git rebase -i HEAD~"${countDiff}"
